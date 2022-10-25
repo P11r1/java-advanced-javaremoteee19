@@ -40,5 +40,26 @@ public class Main {
         privatePassenger.setPersonalIDCode("6848632174785"); //Access PrivatePassenger's field
         privatePassenger.setDestinationAddress("Tartu"); //Access Passenger field
         privatePassenger.setPhoneNumber("+37258664578"); // Access Person field
+
+        //OVERRIDING
+        Person personOverride = new Person();
+        personOverride.setEmail("MarkoPiir@gmail.com");
+        System.out.println(personOverride.getEmail());
+
+        Passeneger passengerOverride = new Passeneger();
+        passengerOverride.setEmail("MarkoPiir@gmail.com");
+        System.out.println(passengerOverride.getEmail());
+
+        //POLYMORPHISM (one PARENT class with different CHILD objects
+        Person person3 = new Person(12345L,"parnu");
+        Person person4 = new Passeneger("CARD", "Vigala");
+        System.out.println(person3.toString());
+        System.out.println(person4.toString());
+
+        //CALLING PARENT METHODS
+        Passeneger passeneger1 = new Passeneger();
+        passeneger1.setAddress("Tallinn"); // Person.address
+        passeneger1.setDestinationAddress("Tartu"); // Passeneger.destinationAddress
+        System.out.println(passeneger1.getAddresses());
     }
 }

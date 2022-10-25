@@ -8,6 +8,9 @@ package org.sda.model;
 public class Passeneger extends Person{
     private String paymentType;
     private String destinationAddress;
+    public Passeneger() {
+
+    }
 
     public Passeneger(String paymentType, String destinationAddress) {
         this.paymentType = paymentType;
@@ -37,4 +40,20 @@ public class Passeneger extends Person{
     }
 
 
+    @Override
+    public String getEmail() {
+        return "sda@gmail.com";
+    }
+
+    public String getAddresses() {
+        return "Source Address: " + super.getAddress() + ", Destination address: " + getDestinationAddress();
+    }
+
+    @Override
+    public String toString() {
+        return "Passeneger{" +
+                "paymentType='" + paymentType + '\'' +
+                ", destinationAddress='" + destinationAddress + '\'' +
+                '}';
+    }
 }

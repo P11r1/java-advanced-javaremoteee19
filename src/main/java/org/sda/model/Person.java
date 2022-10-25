@@ -15,7 +15,7 @@ public class Person {
     private String lastName;
     private String email;
     private String phoneNumber; // String because + 372 before
-    private String address;
+    private String address; //Source adress
 
 
     //Parameterized constructor because parameters inside brackets ()
@@ -96,7 +96,7 @@ public class Person {
     }
 
     @Override
-    public String toString() {
+    public String toString() { //Factory method -  in java library
         return "Person{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
@@ -106,4 +106,6 @@ public class Person {
                 ", address='" + address + '\'' +
                 '}';
     }
+
+
 }
