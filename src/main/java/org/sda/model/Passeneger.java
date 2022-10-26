@@ -6,28 +6,28 @@ package org.sda.model;
 //Inheritance
 //ONE LEVEL INHERITANCE
 public class Passeneger extends Person{
-    private String paymentType;
+    private PaymentType paymentType;
     private String destinationAddress;
     public Passeneger() {
 
     }
 
-    public Passeneger(String paymentType, String destinationAddress) {
+    public Passeneger(PaymentType paymentType, String destinationAddress) {
         this.paymentType = paymentType;
         this.destinationAddress = destinationAddress;
     }
 
-    public Passeneger(Long id, String address, String paymentType, String destinationAddress) {
+    public Passeneger(Long id, String address, PaymentType paymentType, String destinationAddress) {
         super(id, address); // Super refers to parent class PERSON
         this.paymentType = paymentType;
         this.destinationAddress = destinationAddress;
     }
 
-    public String getPaymentType() {
+    public PaymentType getPaymentType() {
         return paymentType;
     }
 
-    public void setPaymentType(String paymentType) {
+    public void setPaymentType(PaymentType paymentType) {
         this.paymentType = paymentType;
     }
 
@@ -55,5 +55,10 @@ public class Passeneger extends Person{
                 "paymentType='" + paymentType + '\'' +
                 ", destinationAddress='" + destinationAddress + '\'' +
                 '}';
+    }
+
+    //PROTECTED
+    public boolean getHiddenAlive() {
+        return super.isAlive();
     }
 }

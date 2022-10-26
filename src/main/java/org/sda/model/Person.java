@@ -15,7 +15,9 @@ public class Person {
     private String lastName;
     private String email;
     private String phoneNumber; // String because + 372 before
-    private String address; //Source adress
+    private String address; //Source address
+
+    protected boolean isAlive;
 
 
     //Parameterized constructor because parameters inside brackets ()
@@ -107,5 +109,11 @@ public class Person {
                 '}';
     }
 
+    protected boolean isAlive() {
+        return isAlive;
+    }
 
+    protected void setAlive(boolean alive) {
+        isAlive = alive;
+    }
 }

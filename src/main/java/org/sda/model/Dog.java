@@ -13,6 +13,8 @@ public class Dog {
     private String race;
     private float weight;
 
+    private Muzzle muzzle;
+
     //Main constructor
     public Dog(String name, int age, boolean isMale, String race, float weight) {
         this.name = name;
@@ -45,6 +47,14 @@ public class Dog {
         if (weight > 0.5) {
             this.weight = weight;
         }
+    }
+
+    public Muzzle getMuzzle() {
+        return muzzle;
+    }
+
+    public void setMuzzle(Muzzle muzzle) {
+        this.muzzle = muzzle;
     }
 
     @Override
