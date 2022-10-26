@@ -88,7 +88,7 @@ public class Main {
         //ENUMS
         System.out.println(PaymentType.CARD);
         System.out.println(Arrays.toString(PaymentType.values())); // Prints all the enums
-        System.out.println(PaymentType.BANK_TRANSFER.getValue()); //Prints the alue of enum '3'
+        System.out.println(PaymentType.BANK_TRANSFER.getValue()); //Prints the value of enum '3'
 
     }
     private static void printPersonAddress(Person person) {
