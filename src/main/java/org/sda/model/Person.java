@@ -5,6 +5,7 @@ import java.util.Random;
 /**
  * Person model
  * Example of encapsulation
+ *
  * @author Marko
  */
 
@@ -60,7 +61,7 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
-        if(!firstName.isEmpty()) {
+        if (!firstName.isEmpty()) {
             this.firstName = firstName;
         }
     }

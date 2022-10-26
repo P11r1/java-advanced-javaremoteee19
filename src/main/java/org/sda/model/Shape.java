@@ -8,7 +8,7 @@ package org.sda.model;
  *
  * @author Marko
  */
-public class Shape {
+public abstract class Shape {
 
     public Shape () {
 
@@ -48,4 +48,7 @@ public class Shape {
     public void setArea(float area) {
         this.area = area;
     }
+
+
+    public abstract String getShape();
 }
