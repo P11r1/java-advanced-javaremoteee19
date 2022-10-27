@@ -7,6 +7,16 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
+        //Shape homework
+        Rectangle rectangleOverride = new Rectangle();
+        rectangleOverride.setArea(60);
+        System.out.println(rectangleOverride.getArea());
+
+        Circle circleOverride = new Circle();
+        circleOverride.setArea(40);
+        System.out.println(circleOverride.getArea());
+
+
         //ENCAPSULATION
         //No-argument constructor call
         Person person = new Person();
@@ -98,4 +108,6 @@ public class Main {
     private static void printPassenegerWithPrefix(String prefix, Object object) {
         System.out.println(prefix + object);
     }
+
+
 }

@@ -1,33 +1,41 @@
 package org.sda.model;
 
-public class Circle extends Rectangle {
+public class Circle extends Shape {
 
-    private int radius;
-    private int size;
+    private float perimeter;
 
-    public int getRadius() {
-        return radius;
+    private float area;
+
+    public Circle() {
+        this.perimeter = perimeter;
+        this.area = area;
     }
 
-    public void setRadius(int radius) {
-        this.radius = radius;
+    public Circle(float circumference, float area, boolean isRound, float perimeter, float area1) {
+        super(circumference, area, isRound);
+        this.perimeter = perimeter;
+        this.area = area1;
     }
 
-    public int getSize() {
-        return size;
+    public float getPerimeter() {
+        return perimeter;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    public void setPerimeter(float perimeter) {
+        this.perimeter = perimeter;
     }
 
-    public Circle(float circumference, boolean isRound, float area, boolean isSquare, boolean hasFourSides, int radius, int size) {
-        super(circumference, isRound, area, isSquare, hasFourSides);
-        this.radius = radius;
-        this.size = size;
-    }
     @Override
-    public String getShape1 () {
-        return "Area " + super.g + ", Shape: " + getShape();
+    public float getArea() {
+        return 30;
+    }
+
+    @Override
+    public void setArea(float area) {
+        this.area = area;
+    }
+
+    public float setArea() {
+        return 30;
     }
 }

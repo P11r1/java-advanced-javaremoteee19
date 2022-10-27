@@ -2,41 +2,41 @@ package org.sda.model;
 
 public class Rectangle extends Shape {
 
-    private boolean isSquare;
-    private boolean hasFourSides;
+    private float sideLength;
 
-    public Rectangle(float circumference, boolean isRound, float area, boolean isSquare, boolean hasFourSides) {
-        super(circumference, isRound, area);
-        this.isSquare = isSquare;
-        this.hasFourSides = hasFourSides;
+    private float area;
+
+    public Rectangle() {
+        this.sideLength = sideLength;
+        this.area = area;
     }
 
-    public boolean isSquare() {
-        return isSquare;
+    public Rectangle(float circumference, float area, boolean isRound, float sideLength, float area1) {
+        super(circumference, area, isRound);
+        this.sideLength = sideLength;
+        this.area = area1;
     }
 
-    public void setSquare(boolean square) {
-        isSquare = square;
+    public float getSideLength() {
+        return sideLength;
     }
 
-    public boolean isHasFourSides() {
-        return hasFourSides;
-    }
-
-    public void setHasFourSides(boolean hasFourSides) {
-        this.hasFourSides = hasFourSides;
+    public void setSideLength(float sideLength) {
+        this.sideLength = sideLength;
     }
 
     @Override
-    public String getShape() {
-        return "Area " + super.getArea();
+    public float getArea() {
+        return 50;
     }
+
     @Override
-    public String toString() {
-        return "Rectangle{" +
-                "isSquare=" + isSquare +
-                ", hasFourSides=" + hasFourSides +
-                '}';
+    public void setArea(float area) {
+        this.area = area;
+    }
+
+    public float setArea() {
+        return 50;
     }
 }
 

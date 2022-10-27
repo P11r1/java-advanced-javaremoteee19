@@ -8,47 +8,45 @@ package org.sda.model;
  *
  * @author Marko
  */
-public abstract class Shape {
+public class Shape {
 
-    public Shape () {
-
-    }
     private float circumference;
-
-    private boolean isRound;
 
     private float area;
 
-    public Shape(float circumference, boolean isRound, float area) {
-        this.circumference = circumference;
-        this.isRound = isRound;
-        this.area = area;
+    private boolean isRound;
+
+    public Shape() {
+
     }
 
-    public float getCircumference() {
+    public Shape( float circumference, float area, boolean isRound){
+        this.circumference = circumference;
+        this.area = area;
+        this.isRound = isRound;
+    }
+
+    public float getCircumference () {
         return circumference;
     }
 
-    public void setCircumference(float circumference) {
+    public void setCircumference ( float circumference){
         this.circumference = circumference;
     }
 
-    public boolean isRound() {
-        return isRound;
-    }
-
-    public void setRound(boolean round) {
-        isRound = round;
-    }
-
-    public float getArea() {
+    public float getArea () {
         return area;
     }
 
-    public void setArea(float area) {
+    public void setArea ( float area){
         this.area = area;
     }
 
+    public boolean isRound () {
+        return isRound;
+    }
 
-    public abstract String getShape();
+    public void setRound ( boolean round){
+        isRound = round;
+    }
 }
