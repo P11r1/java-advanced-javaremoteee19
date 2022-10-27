@@ -63,11 +63,10 @@ public class Main {
         System.out.println(passengerOverride.getEmail());
 
         //POLYMORPHISM (one PARENT class with different CHILD objects)
-        Person person3 = new Person(12345L,"parnu");
+        Person person3 = new Person(12345L, "parnu");
         Person person4 = new Passeneger(PaymentType.CARD, "Vigala");
         System.out.println(person3.toString());
         System.out.println(person4.toString());
-
 
 
         //CALLING PARENT METHODS
@@ -100,7 +99,23 @@ public class Main {
         System.out.println(Arrays.toString(PaymentType.values())); // Prints all the enums
         System.out.println(PaymentType.BANK_TRANSFER.getValue()); //Prints the value of enum '3'
 
+        //lOOPING ENUMS
+        for (PaymentType paymentType : PaymentType.values()) {
+            System.out.println(paymentType.name());
+        }
+
+        //ENUM AND OVERRIDING
+        System.out.println(PaymentType.MOBILE_BANKING.toString());
+
+        //ENUM EXERCISE
+        System.out.println(">>>>>>>>>>>> PLANETS <<<<<<<<<<<<<");
+        System.out.println(Planets.JUPITER.toString());
+        System.out.println("Distance of " + Planets.JUPITER.name() + " from Earth" + Planets.JUPITER.distanceFromEarth());
+        System.out.println("---------------");
+        System.out.println(Planets.MARS.toString());
+        System.out.println("Distance of " + Planets.MARS.name() + " from Earth" + Planets.MARS.distanceFromEarth());
     }
+
     private static void printPersonAddress(Person person) {
         System.out.println(person.getAddress());
     }
@@ -108,6 +123,4 @@ public class Main {
     private static void printPassenegerWithPrefix(String prefix, Object object) {
         System.out.println(prefix + object);
     }
-
-
 }
