@@ -23,7 +23,7 @@ public class Person {
 
     //Parameterized constructor because parameters inside brackets ()
     //Constructor, All arguments constructor(all the fields)
-    //Always starts with public, without return type
+    //Always starts with public
     public Person(Long id, String firstName, String lastName, String email, String phoneNumber, String address) {
         this.id = id;
         this.firstName = firstName;

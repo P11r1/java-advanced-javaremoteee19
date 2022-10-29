@@ -30,7 +30,7 @@ public class Shape {
         return circumference;
     }
 
-    public void setCircumference ( float circumference){
+    public void setCircumference ( float circumference ){
         this.circumference = circumference;
     }
 
@@ -38,7 +38,7 @@ public class Shape {
         return area;
     }
 
-    public void setArea ( float area){
+    public void setArea ( float area ) {
         this.area = area;
     }
 
@@ -46,7 +46,7 @@ public class Shape {
         return isRound;
     }
 
-    public void setRound ( boolean round){
+    public void setRound ( boolean round ){
         isRound = round;
     }
 }
