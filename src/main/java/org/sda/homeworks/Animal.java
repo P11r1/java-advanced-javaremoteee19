@@ -1,32 +1,31 @@
 package org.sda.homeworks;
 
-public class Animal {
-    private boolean isAlive;
-    private boolean jumps;
+public class Animal extends Cat {
     private String voice;
+    private String name;
+
+    Animal cat = new Animal();
+    Animal dog = new Animal();
+
+
+    private String[] animal = {cat, dog};
 
     public Animal() {
+
     }
 
-    public Animal(boolean isAlive, boolean jumps) {
-        this.isAlive = isAlive;
-        this.jumps = jumps;
+    public void yieldVoice() {
+
+    }
+    public Animal(String voice, String name) {
+        this.voice = voice;
+        this.name = name;
     }
 
-    public boolean isAlive() {
-        return isAlive;
-    }
-
-    public void setAlive(boolean alive) {
-        isAlive = alive;
-    }
-
-    public boolean isJumps() {
-        return jumps;
-    }
-
-    public void setJumps(boolean jumps) {
-        this.jumps = jumps;
+    public Animal(boolean hasLegs, boolean hasTail, String color, String breed, String voice, String name) {
+        super(hasLegs, hasTail, color, breed);
+        this.voice = voice;
+        this.name = name;
     }
 
     public String getVoice() {
@@ -37,17 +36,11 @@ public class Animal {
         this.voice = voice;
     }
 
-    public void yieldVoice() {
-        Cat cat = new Cat(true, true, 4, "bark");
-        Dog dog = new Dog(true, true, 4, "bark");
-        String[] animalArray = {"Cat", "Dog"};
+    public String getName() {
+        return name;
+    }
 
-
-        for (String i : animalArray) {
-
-                System.out.println();
-
-
-        }
+    public void setName(String name) {
+        this.name = name;
     }
 }

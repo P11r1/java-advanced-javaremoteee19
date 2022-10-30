@@ -2,26 +2,38 @@ package org.sda.homeworks;
 
 public class Cat extends Dog {
 
-    private String purrs;
-    private String meows;
+    private String color;
+    private String breed;
 
-    public Cat(boolean hasLegs, boolean hasTail, int eyes, String barks) {
-        super(hasLegs, hasTail, eyes, barks);
+    Cat cat = new Cat();
+
+    // Default Constructor
+    public Cat() {
+        super();
     }
 
-    public String getPurrs() {
-        return purrs;
+    //Constructor
+    public Cat(boolean hasLegs, boolean hasTail, String color, String breed) {
+        super();
+
+        this.color = "White";
+        this.breed = "Regular";
     }
 
-    public void setPurrs(String purrs) {
-        this.purrs = purrs;
+    //Getter and Setter
+    public String getColor() {
+        return color;
     }
 
-    public String getMeows() {
-        return meows;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public void setMeows(String meows) {
-        this.meows = meows;
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
     }
 }

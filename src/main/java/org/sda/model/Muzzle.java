@@ -2,6 +2,10 @@ package org.sda.model;
 
 /**
  * Composition exercise
+ * 1. Create a Muzzle class.
+ * a) Create a Muzzle object.
+ * b) Assign the created object to a Dog object.
+ * c) How to use a Dog object to show all attributes of a Muzzle object?
  *
  * @author Marko
  */
