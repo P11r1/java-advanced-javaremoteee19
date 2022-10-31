@@ -16,7 +16,7 @@ public abstract class Animal {
         boolean hasLegs;
 
         //Create simple array of type Animal, that will contain one object of type Dog and one object of type Cat.
-        Animal[] animals = new Animal[]{new Cat(true, true, true, "white", "regular"), (Animal) new Dog(true, true)};
+        Animal[] animals = new Animal[]{new Cat(true, true, true, "white", "regular"), new Dog(true, true)};
 
         //Using for-each loop show which animal gives what kind of voice.
         for (Animal animal : animals) {
