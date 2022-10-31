@@ -11,6 +11,7 @@ package org.sda.homeworks;
  */
 public class Cat extends Animal {
 
+    //Fields
     private boolean hasLegs;
     private String color;
     private String breed;
@@ -24,20 +25,7 @@ public class Cat extends Animal {
         this.breed = breed;
     }
 
-    public Cat() {
-        
-    }
-
-    public Cat(boolean hasLegs, boolean hasTail, String color, String breed) {
-    }
-
     //Getter and Setter
-
-    public boolean isHasLegs() {
-        return hasLegs;
-    }
-
-
     public void setHasLegs(boolean hasLegs) {
         this.hasLegs = hasLegs;
     }
@@ -58,6 +46,7 @@ public class Cat extends Animal {
         this.breed = breed;
     }
 
+    //Override
     @Override
     public void yieldVoice() {
         System.out.println("Cat says: " + "Meow");

@@ -10,17 +10,17 @@ package org.sda.homeworks;
  * @author Marko
  */
 public class Dog extends Animal {
+    //Fields
     private boolean hasLegs;
     private boolean hasTail;
 
-
+    //Constructor
     public Dog(boolean hasLegs, boolean hasTail) {
         this.hasLegs = hasLegs;
         this.hasTail = hasTail;
     }
 
-
-
+    //Getters and Setters
     public boolean isHasLegs() {
         return hasLegs;
     }
@@ -37,6 +37,7 @@ public class Dog extends Animal {
         this.hasTail = hasTail;
     }
 
+    //Override
     @Override
     public void yieldVoice() {
         System.out.println("Dog says: " + "Woof");
