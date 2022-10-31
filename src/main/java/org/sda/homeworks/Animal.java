@@ -1,46 +1,37 @@
 package org.sda.homeworks;
 
-public class Animal extends Cat {
-    private String voice;
-    private String name;
+/**
+ * Create classes Dog and Cat.
+ * a) Move common methods and fields to the class Animal.
+ * b) Create method „yieldVoice”.
+ * c) Create simple array of type Animal, that will contain one object of type Dog and one object of type Cat.
+ * d) Using for-each loop show which animal gives what kind of voice. How to print a name of an object?
+ *
+ * @author Marko
+ */
+public abstract class Animal {
+    public static void main(String[] args) {
 
-    Animal cat = new Animal();
-    Animal dog = new Animal();
+        //Move common methods and fields to the class animal
+        boolean hasLegs;
 
+        //Create simple array of type Animal, that will contain one object of type Dog and one object of type Cat.
+        Animal[] animals = new Animal[]{new Cat(true, true, true, "white", "regular"), (Animal) new Dog(true, true)};
 
-    private String[] animal = {cat, dog};
+        //Using for-each loop show which animal gives what kind of voice.
+        for (Animal animal : animals) {
+            animal.yieldVoice();
 
-    public Animal() {
+            // How to print a name of an object?
+            System.out.println(animal.getClass());
 
+        }
     }
 
-    public void yieldVoice() {
-
-    }
-    public Animal(String voice, String name) {
-        this.voice = voice;
-        this.name = name;
-    }
-
-    public Animal(boolean hasLegs, boolean hasTail, String color, String breed, String voice, String name) {
-        super(hasLegs, hasTail, color, breed);
-        this.voice = voice;
-        this.name = name;
-    }
-
-    public String getVoice() {
-        return voice;
-    }
-
-    public void setVoice(String voice) {
-        this.voice = voice;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    //Create method "yieldVoice"
+    abstract public void yieldVoice();
 }
+
+
+
+

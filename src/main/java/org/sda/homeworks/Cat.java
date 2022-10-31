@@ -1,26 +1,47 @@
 package org.sda.homeworks;
 
-public class Cat extends Dog {
+/**
+ * Create classes Dog and Cat.
+ * a) Move common methods and fields to the class Animal.
+ * b) Create method „yieldVoice”.
+ * c) Create simple array of type Animal, that will contain one object of type Dog and one object of type Cat.
+ * d) Using for-each loop show which animal gives what kind of voice. How to print a name of an object?
+ *
+ * @author Marko
+ */
+public class Cat extends Animal {
 
+    private boolean hasLegs;
     private String color;
     private String breed;
 
-    Cat cat = new Cat();
 
-    // Default Constructor
-    public Cat() {
-        super();
-    }
 
     //Constructor
-    public Cat(boolean hasLegs, boolean hasTail, String color, String breed) {
-        super();
+    public Cat(boolean hasLegs, boolean hasTail, boolean hasLegs1, String color, String breed) {
+        this.hasLegs = hasLegs1;
+        this.color = color;
+        this.breed = breed;
+    }
 
-        this.color = "White";
-        this.breed = "Regular";
+    public Cat() {
+        
+    }
+
+    public Cat(boolean hasLegs, boolean hasTail, String color, String breed) {
     }
 
     //Getter and Setter
+
+    public boolean isHasLegs() {
+        return hasLegs;
+    }
+
+
+    public void setHasLegs(boolean hasLegs) {
+        this.hasLegs = hasLegs;
+    }
+
     public String getColor() {
         return color;
     }
@@ -35,5 +56,10 @@ public class Cat extends Dog {
 
     public void setBreed(String breed) {
         this.breed = breed;
+    }
+
+    @Override
+    public void yieldVoice() {
+        System.out.println("Cat says: " + "Meow");
     }
 }
