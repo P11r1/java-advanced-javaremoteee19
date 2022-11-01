@@ -8,7 +8,7 @@ import org.sda.services.implementations.PersonServiceImpl;
 import java.util.Scanner;
 
 public class Main {
-    public static <userInput> void main(String[] args) throws PersonNotFoundException {
+    public static void main(String[] args) throws PersonNotFoundException {
 
 
         //INTERFACE
@@ -73,21 +73,19 @@ public class Main {
         }
         System.out.println(testPerson.toString());
 
+        //Homework
 
-        try {
-            int a = 0;
-            Scanner scanner = new Scanner(System.in);
-            int userInput = scanner.nextInt();
-            
-            if (userInput >= a) {
-                System.out.println("int ->" + userInput);
-            } else {
-                System.out.println("Hey! That's not a value! Try once more.");
+        Scanner scanner = new Scanner(System.in);
+
+            boolean number = true;
+            while (number) {
+                System.out.print("Give a number: ");
+
+                try {
+                    Integer.parseInt(scanner.nextLine());
+                } catch (Exception e) {
+                    System.out.println("Hey! That's not a value! Try once more");
+                }
             }
-        } catch (ArithmeticException e) {
-            System.out.println("Hey! That's not a value! Try once more.");
-        }
-
-
     }
 }
