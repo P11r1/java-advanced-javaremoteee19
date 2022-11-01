@@ -5,6 +5,7 @@ import org.sda.models.Person;
 import org.sda.services.PersonService;
 import org.sda.services.implementations.PersonServiceImpl;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -73,19 +74,42 @@ public class Main {
         }
         System.out.println(testPerson.toString());
 
-        //Homework
+        //Homework Exception handling
+/**
+ Scanner scanner = new Scanner(System.in);
 
+ boolean number = true;
+ while (number) {
+ System.out.print("Give a number: ");
+
+ try {
+ Integer.parseInt(scanner.nextLine());
+ } catch (Exception e) {
+ System.out.println("Hey! That's not a value! Try once more");
+ }
+ }
+ **/
+        // Homework with Vinod
+        try {
+            displayNumber();
+
+        } catch (InputMismatchException e) {
+            System.out.println(e.getLocalizedMessage());
+            displayNumber();
+        }
+    }
+
+    //Enhanced way
+    private static void displayNumber() {
         Scanner scanner = new Scanner(System.in);
-
-            boolean number = true;
-            while (number) {
-                System.out.print("Give a number: ");
-
-                try {
-                    Integer.parseInt(scanner.nextLine());
-                } catch (Exception e) {
-                    System.out.println("Hey! That's not a value! Try once more");
-                }
-            }
+        if (scanner.hasNextInt()) {
+            int i = scanner.nextInt();
+            System.out.println("int -> " + i);
+        } else if (scanner.hasNextDouble()) {
+            double d = scanner.nextDouble();
+            System.out.println("double -> " + d);
+        } else {
+            throw new InputMismatchException("Hey! That's not a value! Try once more");
+        }
     }
 }
