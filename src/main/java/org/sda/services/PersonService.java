@@ -13,7 +13,7 @@ import java.time.LocalDate;
 
 public interface PersonService {
 
-    //Static field is allowed but not the (int age; <- Error, cant dd like this)
+    //Static field is allowed but not the (int age; <- Error, cant do like this)
     static final int AVERAGE_AGE = 20;
 
 

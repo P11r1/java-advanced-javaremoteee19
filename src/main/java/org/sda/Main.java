@@ -1,5 +1,8 @@
 package org.sda;
 
+import org.sda.abstracts.Food;
+import org.sda.abstracts.Fruit;
+import org.sda.abstracts.Veggie;
 import org.sda.exceptions.PersonNotFoundException;
 import org.sda.models.Person;
 import org.sda.services.PersonService;
@@ -91,12 +94,25 @@ public class Main {
  **/
         // Homework with Vinod
         try {
-            displayNumber();
+            //displayNumber();
 
         } catch (InputMismatchException e) {
             System.out.println(e.getLocalizedMessage());
             displayNumber();
         }
+
+        //ABSTARCT CLASSES
+       // Food food = new Food(); throws an error
+        Fruit fruit = new Fruit("Red ");
+        fruit.eat();
+
+        // Food food = new Veggie("Yellow "); Can do like this also
+        Veggie veggie = new Veggie("Yellow ");
+        Food food = veggie; // you cannot instantiate (new Food()) but you can assign the child class to the abstract class
+        food.eat();
+
+
+
     }
 
     //Enhanced way
