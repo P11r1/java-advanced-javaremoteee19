@@ -8,7 +8,7 @@ package org.sda.model;
  *
  * @author Marko
  */
-public class Shape {
+public abstract class Shape {
 
     private float circumference;
 
