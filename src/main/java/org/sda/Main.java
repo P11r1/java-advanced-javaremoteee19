@@ -122,7 +122,7 @@ public class Main {
 
 
         //ABSTRACT HOMEWORK
-        // Food food = new Food(); throws an error
+
         Rectangle rectangle = new Rectangle();
         rectangle.getPerimeter();
         rectangle.getArea();
