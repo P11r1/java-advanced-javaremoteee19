@@ -2,40 +2,26 @@ package org.sda.model;
 
 public class Circle extends Shape {
 
-    private float perimeter;
-
-    private float area;
 
     public Circle() {
-        this.perimeter = perimeter;
-        this.area = area;
     }
 
-    public Circle(float circumference, float area, boolean isRound, float perimeter, float area1) {
+    public Circle(float perimeter, float circumference, float area, boolean isRound) {
+        super(perimeter, circumference, area, isRound);
+    }
+
+    public Circle(float circumference, float area, boolean isRound) {
         super(circumference, area, isRound);
-        this.perimeter = perimeter;
-        this.area = area1;
     }
 
-    public float getPerimeter() {
-        return perimeter;
-    }
-
-    public void setPerimeter(float perimeter) {
-        this.perimeter = perimeter;
-    }
-
+    //Implement and verify getPerimeter and getArea
     @Override
-    public float getArea() {
-        return 30;
+    public void getPerimeter() {
+        System.out.println("Perimeter of circle");
     }
-
     @Override
-    public void setArea(float area) {
-        this.area = area;
-    }
+    public void getArea() {
+        System.out.println("Area of circle");
 
-    public float setArea() {
-        return 30;
     }
 }

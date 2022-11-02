@@ -8,7 +8,11 @@ package org.sda.model;
  *
  * @author Marko
  */
+
+//Make shape abstract class
 public abstract class Shape {
+
+    private float perimeter;
 
     private float circumference;
 
@@ -20,7 +24,14 @@ public abstract class Shape {
 
     }
 
-    public Shape( float circumference, float area, boolean isRound){
+    public Shape(float perimeter, float circumference, float area, boolean isRound) {
+        this.perimeter = perimeter;
+        this.circumference = circumference;
+        this.area = area;
+        this.isRound = isRound;
+    }
+
+    public Shape(float circumference, float area, boolean isRound){
         this.circumference = circumference;
         this.area = area;
         this.isRound = isRound;
@@ -34,9 +45,6 @@ public abstract class Shape {
         this.circumference = circumference;
     }
 
-    public float getArea () {
-        return area;
-    }
 
     public void setArea ( float area ) {
         this.area = area;
@@ -49,4 +57,14 @@ public abstract class Shape {
     public void setRound ( boolean round ){
         isRound = round;
     }
+
+    public void setPerimeter(float perimeter) {
+        this.perimeter = perimeter;
+    }
+
+    //Add getArea and getPerimeter methods to Shape abstract class
+    public abstract void getPerimeter();
+
+
+    public abstract void getArea();
 }

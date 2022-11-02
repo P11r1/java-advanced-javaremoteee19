@@ -6,8 +6,11 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+        /**
+         *
+         * //Shape homework
 
-        //Shape homework
+
         Rectangle rectangleOverride = new Rectangle();
         rectangleOverride.setArea(60);
         System.out.println(rectangleOverride.getArea());
@@ -15,7 +18,7 @@ public class Main {
         Circle circleOverride = new Circle();
         circleOverride.setArea(40);
         System.out.println(circleOverride.getArea());
-
+**/
 
         //ENCAPSULATION
         //No-argument constructor call
@@ -116,6 +119,18 @@ public class Main {
         System.out.println("-------------------");
         System.out.println(Planets.MARS.toString());
         System.out.println("Distance of " + Planets.MARS.name() + " from Earth: " + Planets.MARS.distanceFromEarth());
+
+
+        //ABSTRACT HOMEWORK
+        // Food food = new Food(); throws an error
+        Rectangle rectangle = new Rectangle();
+        rectangle.getPerimeter();
+        rectangle.getArea();
+
+
+        Circle circle = new Circle();
+        circle.getPerimeter();
+        circle.getArea();
     }
 
 
