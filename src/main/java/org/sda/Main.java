@@ -104,6 +104,14 @@ public class Main {
         System.out.println(fullName.remove("Marko"));
         System.out.println(fullName);
 
+        /**
+         * Map seletus
+         * key -> value
+         * 0 -> "Skoda"
+         * 1 -> "VW"
+         * 210 -> "BMW"
+         **/
+
 
         //Map exercise
 
@@ -158,12 +166,5 @@ public class Main {
 
 
 
-        /**
-         * Map seletus
-         * key -> value
-         * 0 -> "Skoda"
-         * 1 -> "VW"
-         * 210 -> "BMW"
-         **/
     }
 }
