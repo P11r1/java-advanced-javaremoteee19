@@ -5,6 +5,11 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 
+/**
+ * Set homework
+ *
+ * @author Marko
+ */
 public class SetHomework {
 
     //Scanner to get the user input
