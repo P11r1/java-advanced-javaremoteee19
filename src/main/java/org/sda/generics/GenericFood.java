@@ -8,7 +8,7 @@ package org.sda.generics;
 
 public class GenericFood<T> {
     //T - can be everything (String, float .. / Person, Passenger, Car..)
-    private T item; // private Food item
+    private T item; // private Fruit item
 
     //Constructor
     public GenericFood(T item) {
