@@ -4,6 +4,12 @@ import org.sda.generics.*;
 
 import java.io.*;
 import java.math.BigDecimal;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.*;
 
 public class Main {
@@ -143,28 +149,80 @@ public class Main {
         File relativeFile = new File("myText.txt");
 
         //FILE READING
-        FileReader fileReader = new FileReader(absoluteFile);
-        try{
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(absoluteFile));
-            String fileLine; // Store the line of text from the file
+        try {
+            FileReader fileReader = new FileReader(absoluteFile);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String fileLine; // To store the line of text from the file
 
-            while((fileLine = bufferedReader.readLine()) != null) {
+            while ((fileLine = bufferedReader.readLine()) != null) {
                 System.out.println(fileLine);
             }
+
+            bufferedReader.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
         //FILE WRITING
-        try{
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(absoluteFile, true));
-            String fileLine = "\n I can write an errorless Java code :D";
+        try {
+            FileWriter fileWriter = new FileWriter(absoluteFile, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            String fileLine = "\nI can write an error-less Java code :D";
             bufferedWriter.write(fileLine);
+            bufferedWriter.flush();
+            bufferedWriter.close();
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+        //SERIALIZATION - Writing an object to a file
+        String fileName = "file.ser";
+        try {
+            FileOutputStream file = new FileOutputStream(fileName);
+            ObjectOutputStream outputStream = new ObjectOutputStream(file);
 
+            outputStream.writeObject(fruit);
+            outputStream.close();
+            file.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
+        //DESERIALIZATION - To get/read an object from a file.
+        Fruit deserializedFruit = null;
+        try {
+            FileInputStream file = new FileInputStream(fileName);
+            ObjectInputStream inputStream = new ObjectInputStream(file);
+
+            deserializedFruit = (Fruit) inputStream.readObject();
+
+            inputStream.close();
+            file.close();
+
+            System.out.println(deserializedFruit.toString());
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        //NEW I/O
+        Path absolutePath = Paths.get("C:\\Users\\Marko\\IdeaProjects\\java-advanced\\src\\main\\resources\\myText.txt");
+        Path relativePath = Paths.get("my.Text");
+
+        try {
+            //File reading
+            List<String> fileLines = Files.readAllLines(absolutePath, StandardCharsets.UTF_8);
+
+            //Just to print the file which was read above
+            for (String fileLine: fileLines) {
+                System.out.println(fileLine);
+            }
+
+            //File Writing
+            List<String> fileLinesToWrite = List.of("I love java", "Estonia is my country");
+            Files.write(absolutePath,fileLinesToWrite, StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

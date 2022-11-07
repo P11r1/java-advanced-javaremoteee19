@@ -4,27 +4,31 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 @Data
-@AllArgsConstructor
-public class Generic<T> {
-    private T[] value;
+
+public class Generic<E> {
+    private ArrayList<E> value;
+
+    /**Enqueues an element into the queue.**/
+    public void enqueue(E val) {
+
+    }
 
     public static void main(String[] args) {
         Object[] arr = new Object[3];
 
-        Generic<Integer> intGen = new Generic<>(5);
+        Generic<Integer> intGen = new Generic<>();
 
-        Generic<String> strGen = new Generic<>("My name is Marko!");
+        Generic<String> strGen = new Generic<>();
 
-        Generic<Double> dblGen = new Generic<>(2.45);
+        Generic<Double> dblGen = new Generic<>();
 
 
 
 
 
     }
-
 
 }
