@@ -49,7 +49,7 @@ public class Main {
     }
 
     //CONSUMER METHOD
-    private static void consume(String str) {
+    private static void consumer (String str) {
         System.out.println(str);
     }
 }
