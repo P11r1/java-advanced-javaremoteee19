@@ -35,12 +35,10 @@ public class LoremIpsum {
             FileReader fileReader = new FileReader(absoluteFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-
             //Gets each line till end of file is reached
             while((line = bufferedReader.readLine()) != null) {
                 //Splits each line into words
                 String[] words = line.split(" ");
-                //Counts each word
                 count = count + words.length;
             }
             //Prints the counted words
