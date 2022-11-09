@@ -51,7 +51,7 @@ public class LambdaHomework {
         strList.add("Panda");
 
         strList.forEach(
-                (n)->System.out.println(n.length())
+                (n)->System.out.println(n)
         );
 
 
