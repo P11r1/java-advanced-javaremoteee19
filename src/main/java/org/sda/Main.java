@@ -58,11 +58,14 @@ public class Main {
 
         System.out.println(getRandomPerson().toString());
 
+        System.out.println("STREAMS");
+
         //STREAMS - mainly used when you have a LIST
         List<String> carList = List.of("Bmw", "Audi", "Skoda", "Subaru", "Ford");
         carList.stream()
                 .findFirst().
                 ifPresent(System.out::println); // findFirst() -> to get first element -> Optional<T>
+
         carList.stream()
                 .findAny().
                 ifPresent(System.out::println); //findAny() -> Optional<T> - Finds random element in the list
