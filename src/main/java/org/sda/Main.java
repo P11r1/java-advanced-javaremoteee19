@@ -1,5 +1,7 @@
 package org.sda;
 
+import org.sda.concurrency.StopWatchRunnableImpl;
+import org.sda.concurrency.StopWatchThread;
 import org.sda.model.Person;
 
 import java.util.Comparator;
@@ -10,7 +12,7 @@ import java.util.function.*;
 import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //LAMBDA EXPRESSION
         //Predicate
         Person person = new Person("Marko", "Piir", "kukk", 20);
@@ -139,6 +141,32 @@ public class Main {
         Person.Customer customer = new Person.Customer();// Difference in the object instantiation
         customer.userName(person5);
         System.out.println(person5.getUserName());
+
+
+        //CONCURRENCY
+        System.out.println("Main is running after nested classes....");
+        Thread.sleep(5000);
+        System.out.println("Thread test ended!");
+
+
+        //Thread
+        StopWatchThread stopWatchThread = new StopWatchThread("SW1");
+        StopWatchThread stopWatchThread2 = new StopWatchThread("SW2");
+        stopWatchThread.start(); // Starting the StopWatch thread
+        stopWatchThread2.start();// Starting the second stopwatch
+        System.out.println("Main thread starts running");
+        Thread.sleep(5000); // This is for main method
+        System.out.println("Main thread is still running");
+        Thread.sleep(3000); // For main method
+        System.out.println("Main thread end running");
+
+
+        //Runnable
+        System.out.println("Runnable StopWatch started...");
+        Thread stopWatchRunnableThread = new Thread(new StopWatchRunnableImpl());
+        stopWatchRunnableThread.start();
+
+
     }
 
 
