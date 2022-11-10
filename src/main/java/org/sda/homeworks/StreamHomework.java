@@ -63,7 +63,11 @@ public class StreamHomework {
                 .forEach(System.out::println);
 
         //Remove first and last letter, sort and print names
-        nameList.
+        nameList.stream()
+                .map(name -> name.substring(1, name.length()-1))
+                .sorted()
+                .forEach(System.out::println);
+
 
 
 
