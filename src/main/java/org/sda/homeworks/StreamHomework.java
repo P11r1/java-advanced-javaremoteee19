@@ -17,19 +17,18 @@ public class StreamHomework {
         List<String> nameList = List.of("John", "Sarah", "Mark", "Tyla", "Ellisha", "Eamonn");
         List<Integer> numberList =  List.of(1, 4, 2346, 123, 76, 11, 0, 0, 62, 23, 50);
 
-        System.out.println("Given Lists: " + "\n" +  nameList + "\n" + numberList);
+        System.out.println("Given Lists: " + "\n" + "Name list: "+  nameList + "\n" + "Number list: " + numberList);
 
         System.out.println("Sorted name List:");
 
-        //SORTING THE LIST
-        //Name List sorting
+        //Sorted name List
         nameList.stream()
                 .sorted()
                 .forEach(System.out::println);
 
         System.out.println("Sorted number List:");
 
-        //Number List sorting
+        //Sorted number List
         numberList.stream()
                 .sorted()
                 .forEach(System.out::println);
@@ -63,13 +62,10 @@ public class StreamHomework {
                 .forEach(System.out::println);
 
         //Remove first and last letter, sort and print names
+        System.out.println("Sorted names after deleting first and last letter: ");
         nameList.stream()
                 .map(name -> name.substring(1, name.length()-1))
                 .sorted()
                 .forEach(System.out::println);
-
-
-
-
     }
 }
