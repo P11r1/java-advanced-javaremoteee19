@@ -1,5 +1,6 @@
 package org.sda.homeworks;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
@@ -19,38 +20,33 @@ public class StreamHomework {
 
         System.out.println("Given Lists: " + "\n" + "Name list: "+  nameList + "\n" + "Number list: " + numberList);
 
-        System.out.println("Sorted name List:");
-
         //Sorted name List
+        System.out.println("Sorted name List:");
         nameList.stream()
                 .sorted()
                 .forEach(System.out::println);
 
-        System.out.println("Sorted number List:");
-
         //Sorted number List
+        System.out.println("Sorted number List:");
         numberList.stream()
                 .sorted()
                 .forEach(System.out::println);
 
-        System.out.println("Names starting with E:");
-
         //Print only those names, that start with letter "E"
+        System.out.println("Names starting with E:");
         nameList.stream()
                 .filter(s -> s.startsWith("E"))
                 .toList()
                 .forEach(System.out::println);
 
-        System.out.println("Numbers greater than 30: ");
-
         //Print values greater than 30
+        System.out.println("Numbers greater than 30: ");
         numberList.stream()
                 .filter(s -> s > 30)
                 .forEach(System.out::println);
 
-        System.out.println("Numbers lower than 200: ");
-
         //Print all the values lower than 200
+        System.out.println("Numbers lower than 200: ");
         numberList.stream()
                 .filter(s -> s < 200)
                 .forEach(System.out::println);
@@ -66,6 +62,17 @@ public class StreamHomework {
         nameList.stream()
                 .map(name -> name.substring(1, name.length()-1))
                 .sorted()
+                .forEach(System.out::println);
+
+        //Sort backwards by implementing reverse Comparator and using lambda expression
+        System.out.println("Reverse order nameList: ");
+        nameList.stream()
+                .sorted(Comparator.reverseOrder())
+                .forEach(System.out::println);
+
+        System.out.println("Reverse order numberList: ");
+        numberList.stream()
+                .sorted(Comparator.reverseOrder())
                 .forEach(System.out::println);
     }
 }
